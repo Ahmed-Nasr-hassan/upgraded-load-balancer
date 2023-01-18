@@ -1,0 +1,10 @@
+upstream backend {
+    server 44.204.175.196;
+}
+server {
+    listen 80 default_server;
+    server_name _;
+    location / {
+        proxy_pass http://backend;
+    }
+}
